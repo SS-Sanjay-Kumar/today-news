@@ -402,3 +402,22 @@
 .masonry__image:hover::after{
     opacity: 1;
 }
+
+@media  screen and (max-width: 568px) {
+    .nav__link{
+        font-size: smaller;
+    }
+    .hero{
+        flex-direction: column;
+    }
+    .gallery__grid, .masonry__grid, .new__images{
+        display: block;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .new__image, .masonry__image, .gallery__image{
+        height: 300px;
+        margin-bottom: 1rem;
+    }
+    
+}
