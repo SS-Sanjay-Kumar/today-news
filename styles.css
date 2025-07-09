@@ -224,7 +224,7 @@
     grid-template-rows: repeat(3, 200px);
     gap: 1rem;
 }
-.masonry__image{
+.masonry__image img{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -244,7 +244,11 @@
     grid-row: span 2;
 }
 
-.masonry__image-3, .masonry__image-4{
+.masonry__image-3{
+    grid-column: span 1;
+    grid-row: span 1;
+}
+.masonry__image-4{
     grid-column: span 1;
     grid-row: span 1;
 }
@@ -257,9 +261,9 @@
     grid-column: span 4;
     grid-row: span 1;
 }
-
-.masonry__image:hover{  
-
+.masonry__image-7{
+    grid-column: span 1;
+    grid-row: span 1;
 }
 
 .new{
@@ -277,6 +281,124 @@
 }
 .new__images{
     display: grid;
-    gap: 20px;
+    gap: 1rem;
+    margin: 0 auto;
+    max-width: none;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 150px);
+    grid-template-areas: 
+    "a b b f d"
+    "e e c f g"
+    "e e h h m"
+    "i k h h m"
+    "j k l n n"
+    ;
+    object-position: center;
+}
 
+.a{
+    grid-area: a;
+}
+.b{
+    grid-area: b;
+}
+.c{
+    grid-area: c;
+}
+.d{
+    grid-area: d;
+}
+.e{
+    grid-area: e;
+}
+.f{
+    grid-area: f;
+}
+.g{
+    grid-area: g;
+}
+.h{
+    grid-area: h;
+}
+.i{
+    grid-area: i;
+}
+.j{
+    grid-area: j;
+}
+.k{
+    grid-area: k;
+}
+.l{
+    grid-area: l;
+}
+.m{
+    grid-area: m;
+}
+.n{
+    grid-area: n;
+}
+
+.footer{
+    padding:4rem 0rem 1rem 0rem;
+    display: flex;
+    margin: 0 auto; 
+    display: grid;
+    place-items: center;
+    background-color: #2c3338;
+    color: #9b9a9a;
+}
+
+/* Overlay part */
+.gallery__card{
+    position: relative;
+}
+.gallery__overlay{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: white  ;
+    background-color: rgba(0, 0, 0, 0.695);
+    padding: 1rem;
+    font-weight: bold;
+}
+
+
+.masonry__image
+{
+    position: relative;
+}
+
+.masonry__image::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.695);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 5px;
+}
+
+.masonry__image::after{
+    content: "View Story";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    opacity: 0;
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+    border-radius: 5px;
+}
+
+.masonry__image:hover::before, 
+.masonry__image:hover::after{
+    opacity: 1;
 }
